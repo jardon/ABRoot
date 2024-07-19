@@ -19,14 +19,14 @@ jobs:
             apt-get update
             apt-get install -y libbtrfs-dev libdevmapper-dev libgpgme-dev pkg-config build-essential libdpkg-dev
       - name: Build
-        run: go build -o abrootv2
+        run: go build -o abroot
       - name: Compress
-        run: tar -czvf abrootv2.tar.gz abrootv2
+        run: tar -czvf abroot.tar.gz abroot
       - name: Compress-manpage
         run: tar -czvf abroot-man.tar.gz man/man1/abroot.1
       - uses: actions/upload-artifact@v4
         with:
           name: abroot-artifacts
           path: |
-            abrootv2.tar.gz
+            abroot.tar.gz
             abroot-man.tar.gz

@@ -21,5 +21,5 @@ jobs:
           tag_name: ${{ github.ref_name }}
           name: ABRoot-${{ github.ref_name }}
           files: |
-            abrootv2.tar.gz
+            abroot.tar.gz
             abroot-man.tar.gz
