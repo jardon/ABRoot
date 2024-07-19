@@ -18,8 +18,8 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
-          tag_name: ${{ github.event.release.tag_name }}
-          name: ABRoot-${{ github.event.release.tag_name }}
+          tag_name: ${{ github.ref_name }}
+          name: ABRoot-${{ github.ref_name }}
           files: |
             abrootv2.tar.gz
             abroot-man.tar.gz
