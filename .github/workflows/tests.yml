@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
 jobs:
   go-build:
+    name: Go Build
     uses: ./.github/workflows/go-build.yml
   go-tests:
     name: Go Test

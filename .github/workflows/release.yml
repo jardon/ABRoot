@@ -1,10 +1,8 @@
 name: Release
-
 on:
   push:
     tags:
       - '*'
-
 jobs:
   go-build:
     uses: ./.github/workflows/go-build.yml
