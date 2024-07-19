@@ -14,6 +14,10 @@ jobs:
       image: ghcr.io/vanilla-os/pico:main
     steps:
       - uses: actions/checkout@v4
+      - name: Install build dependencies
+        run: |
+            apt-get update
+            apt-get install -y libbtrfs-dev libdevmapper-dev libgpgme-dev pkg-config build-essential libdpkg-dev
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
