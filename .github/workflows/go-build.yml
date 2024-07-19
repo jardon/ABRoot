@@ -3,7 +3,6 @@ name: Go Build
 on:
   workflow_call:
   workflow_dispatch:
-  push:
   pull_request:
     branches: [ "main" ]
 
