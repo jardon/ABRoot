@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v3
         with:
-          name: abroot
+          name: abroot-artifacts
       - name: Untar
         run: tar xvf abrootv2.tar.gz
       - uses: softprops/action-gh-release@v2
