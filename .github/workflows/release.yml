@@ -15,8 +15,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: abroot-artifacts
-      - name: Untar
-        run: tar xvf abrootv2.tar.gz
       - uses: softprops/action-gh-release@v2
         if: github.repository == 'vanilla-os/ABRoot' && github.ref == 'refs/heads/main'
         with:
