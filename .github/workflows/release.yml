@@ -10,12 +10,15 @@ jobs:
     uses: ./.github/workflows/go-build.yaml
   release:
     runs-on: ubuntu-latest
+    needs: [go-build]
     container:
       image: ghcr.io/vanilla-os/pico:main
     steps:
       - uses: actions/download-artifact@v3
         with:
           name: abroot
+      - name: Untar
+        run: tar xvf abrootv2.tar.gz
       - uses: softprops/action-gh-release@v2
         if: github.repository == 'vanilla-os/ABRoot' && github.ref == 'refs/heads/main'
         with:

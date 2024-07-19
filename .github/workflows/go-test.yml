@@ -16,24 +16,24 @@ jobs:
     container:
       image: ghcr.io/vanilla-os/pico:main
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Go
-      uses: actions/setup-go@v5
-      with:
-        go-version: 1.21
-    - uses: actions/download-artifact@v3
+      - uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 1.21
+      - uses: actions/download-artifact@v3
         with:
           name: abroot
-    - name: Untar
-      run: tar xvf abrootv2.tar.gz
-    - name: Test
-      run: go test -v ./tests/...
+      - name: Untar
+        run: tar xvf abrootv2.tar.gz
+      - name: Test
+        run: go test -v ./tests/...
   missing-strings:
     name: Missing Strings
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/vanilla-os/pico:main
     steps:
-    - uses: actions/checkout@v4
-    - name: Check for missing strings
-      uses: vanilla-os/missing-strings-golang-action@v0.1.0
+      - uses: actions/checkout@v4
+      - name: Check for missing strings
+        uses: vanilla-os/missing-strings-golang-action@v0.1.0
