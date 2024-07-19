@@ -14,7 +14,7 @@ jobs:
     container:
       image: ghcr.io/vanilla-os/pico:main
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: abroot-artifacts
       - name: Untar
