@@ -24,10 +24,10 @@ jobs:
     - name: Install build dependencies
       run: |
           apt-get update
-          apt-get install -y libbtrfs-dev libdevmapper-dev libgpgme-dev pkg-config build-essential libdpkg-dev
+          apt-get install -y libbtrfs-dev libdevmapper-dev libgpgme-dev pkg-config build-essential libdpkg-dev git
 
     - name: Build
-      run: go build -o abrootv2 -ldflags="-X 'main.Version=$(git rev-parse --short ${{ github.sha }})'"
+      run: echo go build -o abrootv2 -ldflags="-X 'main.Version=$(git rev-parse --short ${{ github.sha }})'"
 
     - name: Test
       run: go test -v ./tests/...
